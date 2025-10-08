@@ -3,6 +3,8 @@ info:
   title: Démo visuelle – Swagger externe
   description: Exemple de chargement d’une ressource HTML externe pour démonstration interne.
   version: 1.0.0
+servers:
+  - url: https://example.com
 paths:
   /demo:
     get:
@@ -18,4 +20,10 @@ paths:
                 type: string
                 example: |
                   <!DOCTYPE html>
-                  <html><body><h3>Chargement réussi !</h3><p>Page de démo chargée.</p></body></html>
+                  <html>
+                    <head><title>Démo Swagger</title></head>
+                    <body style="font-family:sans-serif;text-align:center;margin-top:50px">
+                      <h3>Chargement réussi !</h3>
+                      <p>Page de démo chargée via Swagger (aucune donnée collectée).</p>
+                    </body>
+                  </html>
