@@ -1,62 +1,21 @@
-openapi: "3.0.3"
+openapi: 3.0.0
 info:
-  title: "DEMO — Maquette connexion (Documentation-only)"
-  version: "0.0.1"
-  description: |
-    **DEMONSTRATION** : document visuel uniquement.
-    Cette specification sert **uniquement** à montrer une maquette de page de connexion
-    dans Swagger UI via `externalDocs`. **Ne jamais** utiliser ce document pour collecter
-    des identifiants réels. Les champs sont fournis en exemple et l'UI n'expose aucun POST.
-    ---
-    Instructions :
-    1. Héberger `demo-login.html` dans le même repo (ou sur un hébergement accessible).
-    2. Remplacer `REPLACE_WITH_RAW_HTML_URL` ci-dessous par l'URL *raw* du HTML.
-    3. Charger ce YAML dans Swagger UI via `?url=<raw_yaml_url>`.
-
-servers:
-  - url: "https://example.local"
-    description: "Server placeholder — documentation only"
-
+  title: Démo visuelle – Swagger externe
+  description: Exemple de chargement d’une ressource HTML externe pour démonstration interne.
+  version: 1.0.0
 paths:
-  /login-doc:
+  /demo:
     get:
-      summary: "Maquette visuelle du formulaire de connexion (documentation only)"
+      summary: Page de connexion de démonstration
       description: |
-        Cette opération **ne** fournit **pas** d'endpoint d'authentification. Elle décrit
-        un schéma et un exemple à des fins de démonstration uniquement. Le lien
-        `externalDocs` pointe vers la maquette HTML (DEMO).
+        Cette page illustre comment Swagger peut charger un contenu externe.
       responses:
-        "200":
-          description: "Représentation du formulaire (exemple uniquement, pas d'exécution)"
+        '200':
+          description: Page HTML de démonstration
           content:
-            application/json:
+            text/html:
               schema:
-                $ref: "#/components/schemas/LoginExample"
-              examples:
-                demo:
-                  summary: "Exemple en lecture seule"
-                  value:
-                    username: "demo.user@example.com"
-                    password: "EXAMPLE_ONLY"
-
-externalDocs:
-  description: "Voir la maquette visuelle (DEMO — ne pas entrer de vrais identifiants)"
-  url: "REPLACE_WITH_RAW_HTML_URL"
-
-components:
-  schemas:
-    LoginExample:
-      type: object
-      properties:
-        username:
-          type: string
-          description: "Adresse e-mail (exemple uniquement)"
-          example: "demo.user@example.com"
-        password:
-          type: string
-          description: "Mot de passe (exemple uniquement — ne pas utiliser de vrais mots de passe)"
-          example: "EXAMPLE_ONLY"
-      additionalProperties: false
-
-x-demo:
-  note: "Ce fichier est non-exécutoire et destiné à des démonstrations visuelles uniquement."
+                type: string
+                example: |
+                  <!DOCTYPE html>
+                  <html><body><h3>Chargement réussi !</h3><p>Page de démo chargée.</p></body></html>
