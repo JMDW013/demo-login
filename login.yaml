@@ -1,29 +1,23 @@
 openapi: 3.0.0
 info:
   title: Démo visuelle – Swagger externe
-  description: Exemple de chargement d’une ressource HTML externe pour démonstration interne.
+  description: |
+    <div style="text-align:center">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Euro_Information_logo.svg" width="150">
+      <h2>Démo interne Swagger</h2>
+      <p>Exemple visuel pour montrer les risques liés au chargement externe.</p>
+    </div>
   version: 1.0.0
 servers:
   - url: https://example.com
 paths:
   /demo:
     get:
-      summary: Page de connexion de démonstration
+      summary: Page de démonstration
       description: |
-        Cette page illustre comment Swagger peut charger un contenu externe.
+        Cette page illustre le rendu Markdown/HTML dans Swagger.
+        <br><br>
+        <b>Chargement réussi !</b>
       responses:
         '200':
-          description: Page HTML de démonstration
-          content:
-            text/html:
-              schema:
-                type: string
-                example: |
-                  <!DOCTYPE html>
-                  <html>
-                    <head><title>Démo Swagger</title></head>
-                    <body style="font-family:sans-serif;text-align:center;margin-top:50px">
-                      <h3>Chargement réussi !</h3>
-                      <p>Page de démo chargée via Swagger (aucune donnée collectée).</p>
-                    </body>
-                  </html>
+          description: OK
