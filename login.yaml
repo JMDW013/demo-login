@@ -2,31 +2,35 @@ swagger: '2.0'
 info:
   version: 1.0.0
   title: Démo Login Euro Information
-  description: |
-    ![Euro Information Logo](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAYAAADNrZC1AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2Fy
-    ZQBQYWludC5ORVQgdjMuNS4xMfEgaZUAAABCSURBVHja7cExAQAAAMKg9U9tCF+gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-    AAAAAAAAAAAwNwABcE4AAEe8u+UAAAAASUVORK5CYII=)
-
-    ## Login Demo
-
-    Remplissez vos identifiants ci-dessous pour continuer.
+  description: Formulaire statique de démo
 
 paths:
   /demo-login:
-    post:
+    get:
       summary: Démo de login
-      description: Formulaire statique illustratif
-      parameters:
-        - name: username
-          in: formData
-          description: Votre nom d'utilisateur
-          required: true
-          type: string
-        - name: password
-          in: formData
-          description: Votre mot de passe
-          required: true
-          type: string
+      produces:
+        - text/html
       responses:
         '200':
-          description: Formulaire affiché avec succès
+          description: Page HTML de démonstration
+          schema:
+            type: string
+            example: |
+              <!DOCTYPE html>
+              <html>
+              <head>
+                <title>Démo Login Euro Information</title>
+              </head>
+              <body style="font-family: Arial, sans-serif; text-align:center;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Euro_Information_Logo.svg/320px-Euro_Information_Logo.svg.png" 
+                     alt="Euro Information Logo" style="max-width:200px; margin:20px;">
+                <h2>Login Demo</h2>
+                <form style="display:inline-block; text-align:left; margin-top:20px;">
+                  <label>Username</label><br>
+                  <input type="text" style="width:100%; padding:8px; margin-bottom:10px;"><br>
+                  <label>Password</label><br>
+                  <input type="password" style="width:100%; padding:8px; margin-bottom:10px;"><br>
+                  <button style="width:100%; padding:10px; background-color:#0055A4; color:white; border:none; border-radius:4px;">Login</button>
+                </form>
+              </body>
+              </html>
