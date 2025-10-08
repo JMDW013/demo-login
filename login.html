@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>DEMO — Euro Information (maquette)</title>
+<style>
+  :root{
+    --bg:#f5f7fb;
+    --card:#ffffff;
+    --accent:#0b5ed7;
+    --muted:#6b7280;
+    --danger:#d9534f;
+    --shadow: 0 8px 30px rgba(15,23,42,0.08);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  html,body{height:100%}
+  body{
+    margin:0;
+    background: linear-gradient(180deg,#eef5ff 0%, var(--bg) 60%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:32px;
+  }
+  .card{
+    width:100%;
+    max-width:920px;
+    background:var(--card);
+    border-radius:14px;
+    box-shadow:var(--shadow);
+    display:grid;
+    grid-template-columns: 380px 1fr;
+    overflow:hidden;
+  }
+  .panel-brand{
+    padding:34px;
+    background:linear-gradient(180deg,#ffffff 0%, #f7fbff 100%);
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    align-items:flex-start;
+    justify-content:flex-start;
+  }
+  .logo {
+    display:flex;
+    gap:12px;
+    align-items:center;
+  }
+  .logo svg { width:56px; height:56px; flex:0 0 56px;}
+  .brand-title { font-size:20px; font-weight:700; color:#0b3768; letter-spacing:0.2px; }
+  .brand-sub { color:var(--muted); font-size:13px; margin-top:-2px;}
+  .note{
+    margin-top:6px;
+    background:#fff8e6;
+    border-left:4px solid #ffd54d;
+    padding:10px 12px;
+    font-size:13px;
+    color:#8a6d00;
+    border-radius:6px;
+  }
+  .hero {
+    margin-top:18px;
+    font-size:13px;
+    color:var(--muted);
+    line-height:1.5;
+  }
+
+  .panel-form{
+    padding:34px 40px;
+  }
+  .warning{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:linear-gradient(90deg, rgba(217,83,79,0.06), rgba(255,255,255,0));
+    border:1px solid rgba(217,83,79,0.12);
+    color:var(--danger);
+    padding:10px 12px;
+    border-radius:8px;
+    font-weight:600;
+    margin-bottom:18px;
+  }
+
+  form {
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    max-width:420px;
+  }
+  label{font-size:13px;color:var(--muted)}
+  input[type="text"], input[type="password"]{
+    border-radius:10px;
+    padding:12px 14px;
+    border:1px solid #e6eef9;
+    font-size:15px;
+    background: linear-gradient(180deg,#fbfcff, #fff);
+    width:100%;
+    box-sizing:border-box;
+  }
+  .muted {
+    font-size:13px;color:var(--muted);
+  }
+  .cta{
+    margin-top:10px;
+    display:flex; gap:10px;
+  }
+  .btn {
+    padding:10px 14px;
+    border-radius:10px;
+    font-weight:700;
+    border:0;
+    cursor:not-allowed; /* demo only */
+    opacity:0.65;
+  }
+  .btn-primary { background:var(--accent); color:#fff; }
+  .btn-secondary { background:#f1f5f9; color:var(--muted); }
+
+  .footer-note { margin-top:18px; font-size:13px; color:var(--muted); }
+  .legal { margin-top:26px; font-size:12px; color:#9aa3b2; }
+
+  @media (max-width:880px){
+    .card { grid-template-columns: 1fr; }
+    .panel-brand{align-items:center;text-align:center}
+    .panel-form{padding:26px}
+    form{margin:auto}
+  }
+</style>
+</head>
+<body>
+  <div class="card" role="region" aria-label="Demo Euro Information login mockup">
+    <div class="panel-brand" aria-hidden="true">
+      <div class="logo">
+        <!-- Simple stylized SVG logo (not the company trademark) -->
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1">
+              <stop offset="0" stop-color="#0b5ed7"/>
+              <stop offset="1" stop-color="#2a9df4"/>
+            </linearGradient>
+          </defs>
+          <circle cx="50" cy="50" r="44" fill="url(#g)"/>
+          <text x="50%" y="55%" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="30" font-weight="700">EI</text>
+        </svg>
+        <div>
+          <div class="brand-title">EURO INFORMATION</div>
+          <div class="brand-sub">Solutions & Services — Demo</div>
+        </div>
+      </div>
+
+      <div class="hero">
+        Présentation visuelle d’un formulaire de connexion (maquette).  
+        Cette page est une **DEMONSTRATION** — <strong>ne saisissez aucun identifiant réel</strong>.
+      </div>
+
+      <div class="note">
+        Démonstration sécurisée : ce formulaire n'envoie **aucune** donnée. Utile pour workshops / slides.
+      </div>
+    </div>
+
+    <div class="panel-form">
+      <div class="warning" role="status" aria-live="polite">
+        ⚠️ DEMO — NE PAS ENTRER DE VRAIS IDENTIFIANTS
+      </div>
+
+      <h2 style="margin:0 0 8px 0">Connexion</h2>
+      <p class="muted" style="margin-top:0;margin-bottom:12px">Formulaire visuel uniquement — champ désactivé en lecture seule.</p>
+
+      <form onsubmit="return false;" aria-hidden="false">
+        <label for="user">Adresse e-mail</label>
+        <input id="user" type="text" placeholder="nom.prenom@exemple.com" aria-disabled="true" disabled>
+
+        <label for="pwd">Mot de passe</label>
+        <input id="pwd" type="password" placeholder="••••••••" aria-disabled="true" disabled>
+
+        <div class="cta">
+          <button class="btn btn-primary" disabled>Se connecter</button>
+          <button class="btn btn-secondary" disabled>Identifiant perdu</button>
+        </div>
+
+        <div class="footer-note">
+          Exemple : utilisez ce mock pour montrer l’impact visuel d’une spec tierce.  
+          Aucune requête n’est effectuée — le bouton est volontairement inactif.
+        </div>
+      </form>
+
+      <div class="legal">
+        &copy; Demo — Euro Information (maquette). Conçu pour preuve visuelle et sensibilisation.
+      </div>
+    </div>
+  </div>
+</body>
+</html>
