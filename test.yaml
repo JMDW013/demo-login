@@ -1,0 +1,32 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "Euro Information — Formulaire de participation"
+  description: "API de test permettant d'envoyer des données de connexion."
+host: "64.226.119.233"
+basePath: "/"
+schemes:
+  - "http"
+paths:
+  /participation:
+    post:
+      summary: "Envoyer les informations de participation"
+      description: "Soumet le prénom et le nom pour participation au concours."
+      consumes:
+        - "application/x-www-form-urlencoded"
+      parameters:
+        - name: "prenom"
+          in: "formData"
+          required: true
+          type: "string"
+          description: "Le prénom du participant"
+        - name: "nom"
+          in: "formData"
+          required: true
+          type: "string"
+          description: "Le nom du participant"
+      responses:
+        200:
+          description: "Données reçues avec succès"
+        400:
+          description: "Erreur dans la requête"
