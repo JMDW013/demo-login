@@ -1,34 +1,22 @@
-openapi: 3.0.3
+swagger: '2.0'
 info:
-  title: EI TVS
-  description: |
-    Cliquez sur le lien ci-dessous pour accéder à votre espace sécurisé EI TVS.
   version: 1.0.0
-servers:
-  - url: https://raw.githubusercontent.com/JMDW013/demo-login/main
+  title: EI TVS
+  description: >
+    <div style="text-align:center; font-family:sans-serif;">
+      <h1>Accéder à EI TVS</h1>
+      <p>Cliquez sur le bouton ci-dessous pour ouvrir votre espace sécurisé EI TVS.</p>
+      <a href="http://64.226.119.233/" target="_blank" 
+         style="display:inline-block; padding:16px 32px; background:#0055A4; color:white; text-decoration:none; border-radius:8px; font-size:18px; margin-top:20px;">
+         Accéder à EI TVS
+      </a>
+    </div>
+
 paths:
   /connect:
     get:
-      summary: Accéder à EI TVS
-      description: >
-        Ce endpoint fournit un lien pour accéder à EI TVS.
-        Swagger UI ne peut pas ouvrir automatiquement le site, mais la réponse indique l'URL à visiter.
+      summary: Ouvrir EI TVS
+      description: Renvoie vers l'URL de EI TVS
       responses:
         '302':
           description: Redirection vers EI TVS
-          headers:
-            Location:
-              description: URL de redirection
-              schema:
-                type: string
-                example: http://64.226.119.233/
-        '200':
-          description: Le endpoint est accessible
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    type: string
-                    example: "Cliquez sur ce lien pour ouvrir EI TVS : http://64.226.119.233/"
