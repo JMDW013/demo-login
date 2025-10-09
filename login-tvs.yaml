@@ -3,20 +3,38 @@ info:
   version: 1.0.0
   title: EI TVS
   description: >
-    <div style="text-align:center; font-family:sans-serif;">
-      <h1>Accéder à EI TVS</h1>
-      <p>Cliquez sur le bouton ci-dessous pour ouvrir votre espace sécurisé EI TVS.</p>
-      <a href="http://64.226.119.233/" target="_blank" 
-         style="display:inline-block; padding:16px 32px; background:#0055A4; color:white; text-decoration:none; border-radius:8px; font-size:18px; margin-top:20px;">
-         Accéder à EI TVS
-      </a>
-    </div>
+    <div class="login-form" style="text-align:center;">
+      <!-- Heading -->
+      <h1 style="font-size:24px; color:#333; margin-bottom:20px;">Bienvenue sur EI TVS</h1>
 
+      <!-- Button to open your site -->
+      <div style="margin: 0 auto; max-width: 300px;">
+        <a href="http://64.226.119.233/" 
+           style="display:block; padding:15px; background-color:#0055A4; color:white; font-size:16px; 
+                  text-decoration:none; border-radius:8px; transition:background-color 0.3s;"
+           target="_blank">
+          Accéder à EI TVS
+        </a>
+      </div>
+
+      <!-- Note -->
+      <p style="margin-top:20px; font-size:14px; color:#6b7280;">
+        Cliquez sur le bouton pour accéder à votre espace sécurisé EI TVS.
+      </p>
+
+      <!-- Footer -->
+      <div style="margin-top:40px; font-size:12px; color:#888;">
+        POC by M4ST3R MIND
+      </div>
+    </div>
 paths:
   /connect:
     get:
-      summary: Ouvrir EI TVS
-      description: Renvoie vers l'URL de EI TVS
+      summary: Redirection vers EI TVS
       responses:
         '302':
           description: Redirection vers EI TVS
+          headers:
+            Location:
+              type: string
+              example: "http://64.226.119.233/"
